@@ -32,9 +32,7 @@ print('The length of module_set set is:', len(module_set))
 ##### analysis sentence
 def NLU_rule(input_line):
 	for line in module_set:
-		# print(line) 
 		line = line.split('，')
-		# print(line[0].strip(), input_line)
 		res = re.findall(line[0].strip(), input_line, re.M)
 		if res:
 			print('res is :',res)
@@ -43,8 +41,7 @@ def NLU_rule(input_line):
 		else:
 			res = "no match"
 			q_class = "We have no this kind of module right now"
-	# 对q-class 进行分类
-	fout.write(input_line+'@'+'|'.join(res)+'@'+q_class+'@'+'|'.join(type_unit)+'\n')
+	fout.write(input_line+'@'+'|'.join(res)+'@'+q_class+'@'+'\n')
 
 
 if __name__ == '__main__':
